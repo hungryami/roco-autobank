@@ -1,0 +1,25 @@
+[project]
+name = "roco-mine-mini-service"
+version = "0.2.0"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "apscheduler>=3.11.3",
+    "fastapi>=0.116,<1",
+    "httpx >= 0.28.1",
+    "pyside6>=6.7",
+    "pyyaml>=6.0.3",
+    "tzdata>=2026.3",
+    "uvicorn>=0.35,<1",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest >= 9.1.0",
+]
+
+[[tool.uv.index]]
+name = "ustc"
+url = "https://mirrors.ustc.edu.cn/pypi/simple"
+default = true
