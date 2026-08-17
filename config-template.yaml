@@ -1,0 +1,30 @@
+# 洛克王国挂机服务配置文件
+# git 把config-template.yaml 改名 config.yaml
+# 登录模式选择: 'qr' (二维码扫码) 或 'password' (密码登录)
+login_mode: "qr"
+
+# 密码登录配置（仅当 login_mode 为 'password' 时生效）
+account: "xxxx"     #填qq号
+password: "xxxx"    #填密码
+
+# 自动化策略
+auto_exit_at_23: true       # 是否在 23:00 自动下线并停止服务进程
+
+# 全自动（仅密码登录的后台模式生效；GUI 内也可手动开启）
+auto_start_hang: true       # 自动进入/管理小游戏挂机
+auto_farm: true             # 自动收菜 + 自动播种（需退出挂机后执行）
+auto_paradise: true         # 自动乐园探险 + 自动领取奖励（挂机中也可执行）
+auto_log_interval: 5        # 每隔多少秒写入一条状态日志（洛克贝/在线时间/乐园剩余次数/本次探险倒计时）
+farm_interval: 3600         # 农场自动巡检间隔（秒）
+paradise_interval: 15       # 乐园自动巡检间隔（秒）
+hang_minutes: 20            # 每挂机多少分钟后退出挂机去收菜/种菜
+hang_cooldown_minutes: 5    # 退出挂机后等待多少分钟再重新挂机（洛克王国免时挂机约 5 分钟间隔）
+# 自动播种优先级（按顺序尝试：先种这个，没有就种下一个，再没有就种背包数量最多的）
+preferred_seed_id: 100728957        # 乖乖蘑菇 https://roco.dvg.cn/ 查询网站
+fallback_seed_ids: [100728955]      # 小Q牛轧糖
+
+
+# 后台模式 HTTP 服务绑定
+host: "127.0.0.1"
+port: 8000
+log_file: "logs/roco-mini-service.log"

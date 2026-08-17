@@ -4,6 +4,20 @@
 
 ## 一、运行方式
 
+```shell
+# python-version >= 3.12 ,最好是3.12 ~ 3.13,  3.14以上的版本可能有bug
+
+uv run main.pygit https://github.com/hungryami/roco-autobank
+cd roco-autobank
+
+#填写自己的配置文件
+mv config-template.yaml config.yaml
+uv sync
+#建议看完再运行
+uv run main.py
+```
+
+
 项目以 `main.py` 为统一入口（`uv run main.py`），启动时读取根目录 `config.yaml`：
 
 | 配置文件状态 | 行为 |
@@ -32,7 +46,7 @@ python -m src.roco_mine_mini_service.server --host 127.0.0.1 --port 8000
 
 ### GUI 模式
 
-![image-20260817233746107](./assets/image-20260817233746107.png)
+![image-20260818001322349](./assets/image-20260818001322349.png)
 
 把 `config.yaml` 中 `account` / `password` 清空（或 `login_mode: "qr"`），再执行 `python gui.py`。
 
@@ -265,8 +279,6 @@ src/roco_mine_mini_service/
 
 
 请在继续下载、安装或使用本项目（以下简称“本项目”）前，仔细阅读以下条款。**任何使用本项目的行为，均视为你已无条件接受并同意本声明的所有条款。**
-
-
 
 1. **仅供学习与交流**
    - 本项目仅供软件开发、网络协议分析及自动化技术的研究与学习使用，切勿用于任何商业用途或非法用途。
